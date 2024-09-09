@@ -491,7 +491,7 @@
 <body>
 <canvas id="particleCanvas"></canvas> <!-- Добавленный элемент canvas -->
 <div id="notification">
-    Пожалуйста, подождите 25 секунд перед следующим нажатием.
+    Please wait 25 seconds before pressing again.
     <div id="progress-bar"></div>
 </div>
 
@@ -504,7 +504,7 @@
 </div>
 
 <div style="text-align:center;">
-    <button id="explodeButton">Получить сигнал</button>
+    <button id="explodeButton">Get a signal</button>
 </div>
 
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
@@ -568,7 +568,7 @@
             triggerHapticFeedback();
             const currentTime = new Date().getTime();
             if (currentTime - lastClickTime < notificationInterval) {
-                showNotification("Пожалуйста, подождите 5 секунд перед следующим нажатием.");
+                showNotification("Please wait 5 seconds before pressing again.");
                 return;
             }
             lastClickTime = currentTime;
