@@ -591,7 +591,6 @@
         // Функция для взрыва квадратов
         function triggerExplosion() {
             const squares = $('.square');
-            const audio = new Audio('/static/startest.mp3'); // Путь к вашему звуку
             let starCount;
             switch (trapCount) {
                 case 1:
@@ -612,8 +611,6 @@
 
             randomIndexes.forEach((index, i) => {
                 setTimeout(function () {
-                    audio.currentTime = 0; // Перематываем звук на начало
-                    audio.play(); // Воспроизводим звук
                     $(squares[index]).explode({
                         radius: 100,
                         minRadius: 20,
@@ -716,6 +713,10 @@
 
     initParticles();
     animateParticles();
+
+    const tg = window.Telegram.WebApp;
+    tg.expand()
+
     document.addEventListener('touchstart', function (event) {
         if (event.touches.length > 1) {
             event.preventDefault(); // Отключаем стандартное поведение при мультитач событиях
